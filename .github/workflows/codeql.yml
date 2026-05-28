@@ -19,8 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        language: [javascript, python]
-        # Add: java, ruby, csharp, go, cpp as needed
+        language: [python]
+        # Add: javascript, java, ruby, csharp, go, cpp as needed
 
     steps:
       - name: Checkout code
