@@ -1,3 +1,5 @@
+import requests
+
 def hello():
     print("AppSec Pilot")
 
