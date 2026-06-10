@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOAR Pilot — Security Orchestration Console</title>
+<link rel="stylesheet" href="{{ url_for('web.static', filename='style.css') }}">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">◈</div>
+      <div>
+        <div class="brand-name">SOAR&nbsp;Pilot</div>
+        <div class="brand-sub">orchestrate · automate · respond</div>
+      </div>
+    </div>
+    <nav id="nav">
+      <a href="#dashboard" data-view="dashboard" class="active"><span class="nav-ico">▤</span>Dashboard</a>
+      <a href="#integrations" data-view="integrations"><span class="nav-ico">⇄</span>Integrations</a>
+      <a href="#playbooks" data-view="playbooks"><span class="nav-ico">▶</span>Playbooks</a>
+      <a href="#incidents" data-view="incidents"><span class="nav-ico">⚑</span>Incidents</a>
+      <a href="#events" data-view="events"><span class="nav-ico">≋</span>Event stream</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="pulse-dot"></div> pipeline healthy
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h1 id="view-title">Dashboard</h1>
+      <div class="topbar-actions">
+        <button class="btn btn-ghost" id="refresh-btn" title="Refresh">↻ Refresh</button>
+        <button class="btn btn-primary" id="add-integration-btn">+ New integration</button>
+      </div>
+    </header>
+    <div id="view" class="view"></div>
+  </main>
+</div>
+
+<!-- Integration setup wizard -->
+<div class="modal-backdrop hidden" id="wizard-backdrop">
+  <div class="modal" id="wizard-modal"></div>
+</div>
+
+<!-- Incident drawer -->
+<div class="drawer hidden" id="drawer"></div>
+
+<div id="toast-rack"></div>
+
+<script src="{{ url_for('web.static', filename='app.js') }}"></script>
+</body>
+</html>
